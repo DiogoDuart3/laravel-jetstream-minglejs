@@ -7,6 +7,20 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
+## About This Project
+
+This project is built on the Laravel framework and includes several additional packages to enhance its functionality and user interface:
+
+- **[Laravel Jetstream](https://jetstream.laravel.com/)**: Provides a robust starting point for your Laravel application, including login, registration, email verification, two-factor authentication, session management, API support via Laravel Sanctum, and optional team management.
+
+- **[MingleJS](https://github.com/ijpatricio/mingle)**: A lightweight JavaScript framework for building reactive user interfaces in Laravel applications.
+
+- **[Tailwind CSS](https://tailwindcss.com/)**: A utility-first CSS framework for rapidly building custom user interfaces.
+
+- **[shadcn/ui](https://ui.shadcn.com/)**: A collection of re-usable components built with Tailwind CSS and Radix UI.
+
+These additions provide a powerful foundation for building modern, responsive, and feature-rich web applications.
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:

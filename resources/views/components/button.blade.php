@@ -1,3 +1,37 @@
-<button {{ $attributes->merge(['type' => 'submit', 'class' => 'inline-flex items-center px-4 py-2 bg-gray-800 dark:bg-gray-200 border border-transparent rounded-md font-semibold text-xs text-white dark:text-gray-800 uppercase tracking-widest hover:bg-gray-700 dark:hover:bg-white focus:bg-gray-700 dark:focus:bg-white active:bg-gray-900 dark:active:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 disabled:opacity-50 transition ease-in-out duration-150']) }}>
-    {{ $slot }}
-</button>
+@props([
+    'variant' => 'default',
+    'size' => 'default',
+    'asChild' => false
+])
+
+@php
+$baseClass = 'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50';
+
+$variants = [
+    'default' => 'bg-primary text-primary-foreground hover:bg-primary/90',
+    'destructive' => 'bg-destructive text-destructive-foreground hover:bg-destructive/90',
+    'outline' => 'border border-input bg-background hover:bg-accent hover:text-accent-foreground',
+    'secondary' => 'bg-secondary text-secondary-foreground hover:bg-secondary/80',
+    'ghost' => 'hover:bg-accent hover:text-accent-foreground',
+    'link' => 'text-primary underline-offset-4 hover:underline',
+];
+
+$sizes = [
+    'default' => 'h-10 px-4 py-2',
+    'sm' => 'h-9 rounded-md px-3',
+    'lg' => 'h-11 rounded-md px-8',
+    'icon' => 'h-10 w-10',
+];
+
+$classes = $baseClass . ' ' . $variants[$variant] . ' ' . $sizes[$size];
+@endphp
+
+@if($asChild)
+    <x-slot {{ $attributes->merge(['class' => $classes]) }}>
+        {{ $slot }}
+    </x-slot>
+@else
+    <button {{ $attributes->merge(['type' => 'button', 'class' => $classes]) }}>
+        {{ $slot }}
+    </button>
+@endif

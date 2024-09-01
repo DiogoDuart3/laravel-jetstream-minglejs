@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
 
@@ -13,6 +13,10 @@ function Counter({ wire, ...props }) {
     };
 
     const message = props.mingleData.message;
+
+    useEffect(() => {
+        document.getElementById("skeleton-counter").remove();
+    }, []);
 
     return (
         <div className="m-10">

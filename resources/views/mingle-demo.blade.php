@@ -20,4 +20,5 @@
         </div>
 
     </div>
+    @livewire(\App\Livewire\Toaster::class)
 </x-app-layout>

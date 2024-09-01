@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
+import { toast } from "sonner";
 
 function Counter({ wire, ...props }) {
     const [count, setCount] = useState(1);
 
     const doubleCurrentCount = () => {
+        toast.success("Double count");
         wire.doubleIt(count).then((data) => {
             setCount(data);
         });

@@ -1,0 +1,4 @@
+procs:
+  npm: {
+    shell: "npm run dev"
+  }

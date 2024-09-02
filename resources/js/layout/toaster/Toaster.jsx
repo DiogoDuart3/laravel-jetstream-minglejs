@@ -1,6 +1,6 @@
 import React from 'react'
-import { Toaster as SonnerToaster } from "@/components/ui/sonner"
+import { Toaster as ToasterI } from "@/components/ui/toaster"
 
 export default function Toaster() {
-    return <SonnerToaster />
+    return <ToasterI />
 }

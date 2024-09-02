@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { toast } from "sonner";
+import { toast } from "@/components/ui/use-toast";
 
 function Counter({ wire, ...props }) {
     const [count, setCount] = useState(1);
 
     const doubleCurrentCount = () => {
-        toast.success("Double count");
+        toast({title: "Double count"});
         wire.doubleIt(count).then((data) => {
             setCount(data);
         });
